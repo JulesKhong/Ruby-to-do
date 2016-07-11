@@ -1,0 +1,11 @@
+<h1><%= @list_name %></h1>
+
+<form action="/list_form" method="post">
+  <input type="hidden" name="name" value="<%= @list_name %>">
+  <h3>List items</h3>
+  <input type="text" name="item_1">
+  <input type="text" name="item_2">
+  <button type="submit" name="items">Add items</button>
+</form>
+
+<hr>

@@ -1,3 +1,12 @@
-<h1>Your task has been successfully added!</h1>
+<h1>Your list has been updated</h1>
 
-<p><a href="/">Back</a></p>
+<p><a href="/">See all lists</a></p>
+<p><a href="/list_form">Add more items</a></p>
+<%= @name %>
+<% if @tasks.length() > 0 %>
+  <ul>
+  <% @tasks.each() do |task|%>
+    <li> <%= task %></li>
+  <% end %>
+  </ul>
+  <%end%>
