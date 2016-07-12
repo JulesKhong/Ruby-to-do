@@ -23,8 +23,32 @@ describe('adding list details',{ :type => :feature}) do
     fill_in('name', :with => 'Groceries')
     click_button('Add list')
     fill_in('item_1', :with => 'milk')
-    fill_in('item_2', :with => 'broccoli')
+    fill_in('due_1', :with => '2016-01-01')
+    # fill_in('item_2', :with => 'broccoli')
     click_button('Add items')
-    expect(page).to have_content('broccoli')
+    expect(page).to have_content('milk')
+  end
+
+  it("displays list form when user clicks 'Add more items' link") do
+    visit('/')
+    fill_in('name', :with => 'Groceries')
+    click_button('Add list')
+    fill_in('item_1', :with => 'milk')
+    # fill_in('item_2', :with => 'broccoli')
+    click_button('Add items')
+    click_link('See all lists')
+    expect(page).to have_content('Create a new list')
+  end
+
+  it("allows users to enter a due date for each item") do
+    visit('/')
+    fill_in('name', :with => 'Groceries')
+    click_button('Add list')
+    fill_in('item_1', :with => 'milk')
+    fill_in('due_1', :with => '2016-08-10')
+    # fill_in('item_2', :with => 'broccoli')
+    # fill_in('due_2', :with => '2016-08-21')
+    click_button('Add items')
+    expect(page).to have_content('2016-08-21')
   end
 end

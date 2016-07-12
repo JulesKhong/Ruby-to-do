@@ -1,10 +1,16 @@
-<h1><%= @list_name %></h1>
+<h1><%= @new_list.name() %></h1>
 
 <form action="/list_form" method="post">
-  <input type="hidden" name="name" value="<%= @list_name %>">
+  <input type="hidden" name="name" value="<%= @new_list.id() %>">
   <h3>List items</h3>
+  <label for="item_1">Task:</label>
   <input type="text" name="item_1">
+  <label for="due_1">Deadline:</label>
+  <input type="text" name="due_1">
+  <!-- <label for="item_2">Task:</label>
   <input type="text" name="item_2">
+  <label for="due_2">Deadline:</label>
+  <input type="text" name="due_2"> -->
   <button type="submit" name="items">Add items</button>
 </form>
 

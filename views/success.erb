@@ -1,12 +1,10 @@
 <h1>Your list has been updated</h1>
 
 <p><a href="/">See all lists</a></p>
-<p><a href="/list_form">Add more items</a></p>
-<%= @name %>
-<% if @tasks.length() > 0 %>
+<!-- <p><a href="/list_form">Add more items</a></p> -->
+<!-- <%= @new_task.description %> -->
+
   <ul>
-  <% @tasks.each() do |task|%>
-    <li> <%= task %></li>
-  <% end %>
+    <li><%= @new_task.description() %></li>
+    <li><%= @new_task.due_date() %></li>
   </ul>
-  <%end%>

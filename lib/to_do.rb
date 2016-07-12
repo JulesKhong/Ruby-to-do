@@ -16,7 +16,6 @@ class Task
       @due_date = task.fetch("due_date")
       tasks.push(Task.new({:description => @description, :list_id => @list_id, :due_date => @due_date}))
     end
-
     tasks
   end
 
