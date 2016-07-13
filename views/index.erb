@@ -2,15 +2,35 @@
 
 <p>Here are all your task lists:</p>
 
-
-
 <p>Create a new list:</p>
 
-<form action="/list_name" method="post">
-  <label for="name">List Name</label>
+<form action="/lists" method="post">
+  <label for="name">List Name:</label>
   <input id="name" name="name" type="text">
 
   <button type="submit">Add list</button>
 </form>
 
 <hr>
+
+<p>Add tasks to any list:</p>
+<form class="form-group" action="/tasks" method="post">
+  
+  <label for="list_id">Select a list</label>
+  <select id="list_id" name="list_id" type="text">
+    <% @lists.each() do |list|%>
+    <option value="<%= list.id() %>"> <%= list.name() %></option>
+    <% end %>
+  </select>
+
+  <label for="description">Description of task:</label>
+  <input type="text" name="description" id="description">
+
+  <label for="due_1">Deadline:</label>
+  <input type="text" name="due_1">
+
+  <button type="submit">Add task</button>
+
+</form>
+
+<a href="/lists">See all lists</a>
